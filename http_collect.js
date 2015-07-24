@@ -8,14 +8,12 @@ var http = require('http');
 // My solution
 http.get(process.argv[2], function (response) {
   response.setEncoding('utf8');
-  var totalCharacters = 0;
   var completeString = "";
   response.on("data", function(data) {
-    totalCharacters += data.length;
     completeString += data;
   });
   response.on("end", function() {
-    console.log(totalCharacters);
+    console.log(completeString.length);
     console.log(completeString);
   });
 });
