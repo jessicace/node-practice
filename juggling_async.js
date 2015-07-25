@@ -9,7 +9,8 @@ for (var i = 2; i < process.argv.length; i++) {
   urls.push(process.argv[i]);
 }
 
-var strings = [];
+var strings = {};
+var count = 0;
 
 function http_request (url, index) {
   http.get(url, function (response) {
@@ -20,9 +21,10 @@ function http_request (url, index) {
     });
     response.on("end", function() {
       strings[index] = completeString;
-      if (urls.length == strings.length && strings[0]) {
-        for(string in strings) {
-          console.log(strings[string]);
+      count++;
+      if (count == urls.length) {
+        for (var i = 0; i < count; i++) {
+          console.log(strings[i]);
         }
       }
     });
