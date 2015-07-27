@@ -13,9 +13,9 @@ console.log('Server running at http://127.0.0.1:3000');
 function homeRoute(request, response) {
   // show search
   response.writeHead(200, { 'Content-Type': 'text/plain' });
-  setInterval(function() {
-    response.write(new Date() + '\n');
-  }, 1000);
+  response.write("Header\n");
+  response.write("Search\n");
+  response.end("Footer\n");
   // response.end('Goodbye World!\n');
 }
 // 3. Handle HTTP route GET /:username e.g. jessicace
