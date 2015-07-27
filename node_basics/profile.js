@@ -40,7 +40,8 @@ var request =
       }
     });
   });
-request.on("error", printError(error));
+  // Connection Error
+  request.on("error", printError);
 }
 
 module.exports.get = get;
