@@ -1,3 +1,6 @@
+// Apply static middleware to serve index.html file without any routes.
+
+
 var express = require('express');
 var app = express();
 var portNumber = process.argv[2];
